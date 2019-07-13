@@ -40,20 +40,7 @@ def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_arr
   holiday_hash
 end
 add_new_holiday_with_supplies(holiday_supplies, :fall, :succas, ["lulav", "esrog", "schach"])
-# This is the way learn.co tests the method to see if it's working:
-# columbus_day_supplies = ["Flags", "Parade Floats", "Italian Food"]
-# add_new_holiday_with_supplies(holiday_supplies, :fall, :columbus_day, columbus_day_supplies)
-# //////////////////////////////////////////////////////////////////////////
 
-
-# this is the basis for the method below that adds a whole new season to the hash
-# puts holiday_supplies[:aviv] = {:pesach => ["Matzah", "Maror"]}
-# puts holiday_supplies
-
-
-# Here we create a whole new season at what we could call the the "season-echelon"
-# The new echelon being created apparently must always be left of the 
-# equals (=) sign as shown below on line 94
 def add_new_season_and_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   holiday_hash[season] = {holiday_name => supply_array} # the new echelon being created is to the left of the equals sign.
   holiday_hash
@@ -72,14 +59,8 @@ all_winter_holiday_supplies(holiday_supplies)
 
 
 def all_supplies_in_holidays(holiday_hash)
-  # iterate through holiday_hash and print items such that your readout resembles:
-  # Winter:
-  #   Christmas: Lights, Wreath
-  #   New Years: Party Hats
-  # Summer:
-  #   Fourth Of July: Fireworks, BBQ
-  # etc.
-  holiday_hash.each do | season, holiday|
+  
+  hash.each do | season, holiday|
      puts "#{season.capitalize}:"
      holiday.each do |holiday, item|
        puts "  #{holiday.to_s.split("_").map {|i| i.capitalize}.join(" ")}: #{item.join(", ")}"
